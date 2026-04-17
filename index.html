@@ -8,9 +8,9 @@
     <style>
         /* --- CSS Variables & Reset --- */
         :root {
-            --primary-blue: #162c4a; /* Dark blue from header/table */
-            --accent-gold: #c6a254; /* Gold text/buttons */
-            --bg-page: #f4f6f9; /* Light grey background */
+            --primary-blue: #162c4a;
+            --accent-gold: #c6a254;
+            --bg-page: #f4f6f9;
             --bg-card: #ffffff;
             --text-dark: #333333;
             --text-light: #888888;
@@ -31,7 +31,6 @@
 
         /* --- Hero/Header Section --- */
         .hero {
-            /* Using a dark blue gradient over a placeholder image */
             background: linear-gradient(rgba(22, 44, 74, 0.9), rgba(22, 44, 74, 0.9)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover;
             color: white;
@@ -83,7 +82,7 @@
 
         .hero-icon {
             font-size: 2rem;
-            color: #00bcd4; /* Light blue accent icon */
+            color: #00bcd4;
             margin-bottom: 15px;
         }
 
@@ -120,38 +119,6 @@
             padding-left: 10px;
             border-left: 4px solid var(--accent-gold);
             font-weight: 600;
-        }
-
-        /* --- System Information Table --- */
-        .info-section {
-            margin-bottom: 50px;
-            background: var(--bg-card);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            padding: 20px;
-        }
-
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .info-table th, .info-table td {
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-            font-size: 0.9rem;
-        }
-
-        .info-table th {
-            background-color: var(--primary-blue);
-            color: white;
-            width: 25%;
-            font-weight: 500;
-        }
-
-        .info-table td {
-            color: var(--text-dark);
         }
 
         /* --- Database Sheets Grid --- */
@@ -260,6 +227,8 @@
             line-height: 1.4;
         }
 
+        /* Cleaned up removed info-table styles to keep CSS tidy */
+
     </style>
 </head>
 <body>
@@ -290,42 +259,6 @@
 
     <main class="container">
         
-        <h2 class="section-title">System Information</h2>
-        <section class="info-section">
-            <table class="info-table">
-                <tbody>
-                    <tr>
-                        <th>System Name</th>
-                        <td>Manila EOIS (Engineering Office Info System)</td>
-                    </tr>
-                    <tr>
-                        <th>Coverage</th>
-                        <td>LGU Engineering Office + Design-Build Firms</td>
-                    </tr>
-                    <tr>
-                        <th>Location</th>
-                        <td>City of Manila, Metro Manila, Philippines</td>
-                    </tr>
-                    <tr>
-                        <th>Database Model</th>
-                        <td>Relational (3NF Normalized)</td>
-                    </tr>
-                    <tr>
-                        <th>Sheets Included</th>
-                        <td>Employees, Projects, Contractors, Permits, Equipment, Budget</td>
-                    </tr>
-                    <tr>
-                        <th>Prepared for</th>
-                        <td>CEM 04 - Database Management in Construction</td>
-                    </tr>
-                    <tr>
-                        <th>Instructor</th>
-                        <td>Joben C. Guevarra</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
         <h2 class="section-title">Database Sheets</h2>
         <section class="sheets-section">
             <div class="sheet-nav-title">
