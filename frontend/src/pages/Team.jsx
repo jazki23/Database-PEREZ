@@ -2,53 +2,29 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import './HomePage.css'; 
 
-// --- Image Imports ---
+// --- Image Imports (Matched to your explorer screenshot) ---
 import photoAvril from '../assets/avril.jpg'; 
-// When you upload more photos, import them here like this:
-// import photoFatima from '../assets/fatima.jpg';
+import photoFatima from '../assets/fatima.jpg';
+import photoArjay from '../assets/arjay.jpg';
+import photoErnest from '../assets/ernest.jpg';
+import photoIvy from '../assets/ivy.jpg';
+import photoMila from '../assets/mila.jpg';
+import photoLove from '../assets/love.jpg'; // Filename matches love.jpg
 
 function Team() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const teamMembers = [
-    { 
-      name: "Engr. Avril Perez", 
-      role: "Project Manager", 
-      photo: photoAvril 
-    },
-    { 
-      name: "Engr. Fatima Marie Herrera", 
-      role: "Project Manager", 
-      photo: "https://via.placeholder.com/150" 
-    },
-    { 
-      name: "Engr. Arjay Ocfemia", 
-      role: "Site Engineer", 
-      photo: "https://via.placeholder.com/150" 
-    },
-    { 
-      name: "Engr. Ernest Baldio", 
-      role: "Site Engineer", 
-      photo: "https://via.placeholder.com/150" 
-    },
-    { 
-      name: "Engr. Ivy Parrocho", 
-      role: "Quantity Surveyor", 
-      photo: "https://via.placeholder.com/150" 
-    },
-    { 
-      name: "Engr. Mila Bolante", 
-      role: "Safety Officer", 
-      photo: "https://via.placeholder.com/150" 
-    },
-    { 
-      name: "Engr. Lovely Dela Rosa", 
-      role: "Safety Officer", 
-      photo: "https://via.placeholder.com/150" 
-    }
+    { name: "Engr. Avril Perez", role: "Project Manager", photo: photoAvril },
+    { name: "Engr. Fatima Marie Herrera", role: "Project Manager", photo: photoFatima },
+    { name: "Engr. Arjay Ocfemia", role: "Site Engineer", photo: photoArjay },
+    { name: "Engr. Ernest Baldio", role: "Site Engineer", photo: photoErnest },
+    { name: "Engr. Ivy Parrocho", role: "Quantity Surveyor", photo: photoIvy },
+    { name: "Engr. Mila Bolante", role: "Safety Officer", photo: photoMila },
+    { name: "Engr. Lovely Dela Rosa", role: "Safety Officer", photo: photoLove }
   ];
 
-  // Helper styles for the 4-3 layout
+  // Layout Styles
   const cardStyle = {
     background: 'white',
     padding: '40px 25px',
@@ -59,7 +35,8 @@ function Team() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    flex: '1 1 22%' 
+    flex: '1 1 22%',
+    minWidth: '280px'
   };
 
   const secondRowCardStyle = {
