@@ -23,7 +23,7 @@ function Services() { // Rename this to Projects or Contact for the other files
       </main>
 
       <footer style={{ textAlign: 'center', padding: '60px 0 40px', borderTop: '2px solid #e2e8f0' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.2rem', fontWeight: '800' }}>IMPERIUM BUILDERS</p>
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.2rem', fontWeight: '800' }}>NEXUS BUILDERS</p>
       </footer>
     </div>
   );
