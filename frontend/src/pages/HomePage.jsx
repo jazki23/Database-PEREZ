@@ -12,12 +12,12 @@ function HomePage() {
         <div className="hero-content" style={{ padding: '80px 0' }}>
           <i className="fa-solid fa-compass-drafting hero-icon" style={{ fontSize: '3rem' }}></i>
           <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '15px' }}>
-            IMPERIUM BUILDERS
+            NEXUS BUILDERS
           </h1>
           <h2 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1.8rem' }}>
             Information System Database
           </h2>
-          <p style={{ fontSize: '1.1rem', marginTop: '10px' }}>MANILA, PHILIPPINES • CEM 04 FINAL PROJECT</p>
+          <p style={{ fontSize: '1.1rem', marginTop: '10px' }}>MANILA, PHILIPPINES</p>
         </div>
       </header>
 
@@ -46,7 +46,7 @@ function HomePage() {
             }}>
               <i className="fa-solid fa-quote-left" style={{ color: '#f1f5f9', fontSize: '4.5rem', position: 'absolute', top: '15px', left: '15px' }}></i>
               <p style={{ fontSize: '1.6rem', color: 'var(--primary-blue)', fontWeight: '600', lineHeight: '1.7', fontStyle: 'italic', position: 'relative', zIndex: '2' }}>
-                "Imperium Builders is committed to delivering engineered solutions that meet the highest standards of quality, efficiency, and construction integrity."
+                "Nexus Builders is committed to delivering engineered solutions that meet the highest standards of quality, efficiency, and construction integrity."
               </p>
 
               <div className="values-container" style={{ display: 'flex', gap: '15px', marginTop: '40px' }}>
@@ -80,7 +80,7 @@ function HomePage() {
                 </div>
               </div>
               <p style={{ fontSize: '1.2rem', lineHeight: '2.0', color: '#334155' }}>
-                Founded by <strong>Engineer Percival Archer Riego</strong>, Imperium Builders was established to revolutionize construction through data-driven planning and strategic coordination.
+                Founded by <strong>Engineer Percival Archer Riego</strong>, Nexus Builders was established to revolutionize construction through data-driven planning and strategic coordination.
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ function HomePage() {
       </main>
 
       <footer style={{ textAlign: 'center', padding: '80px 0 40px', borderTop: '2px solid #e2e8f0', marginTop: '60px' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>IMPERIUM BUILDERS</p>
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>NEXUS BUILDERS</p>
         <p style={{ color: '#94a3b8', fontSize: '1rem' }}>&copy; 2026 • Engineering Office Information System • Manila, Philippines</p>
       </footer>
     </div>

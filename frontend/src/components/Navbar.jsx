@@ -12,7 +12,7 @@ function Navbar() {
       <div className="nav-logo">
         <i className="fa-solid fa-building-columns" style={{ fontSize: '1.8rem' }}></i>
         <span>
-          <strong style={{ fontSize: '1.4rem' }}>IMPERIUM BUILDERS</strong><br />
+          <strong style={{ fontSize: '1.4rem' }}>NEXUS BUILDERS</strong><br />
           <small style={{ color: 'white', fontSize: '0.85rem', letterSpacing: '1px' }}>
             Engineering Office Information System
           </small>
