@@ -67,7 +67,7 @@ function AboutUs() {
       </main>
 
       <footer style={{ textAlign: 'center', padding: '60px 0 30px', borderTop: '2px solid #e2e8f0', marginTop: '40px' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.3rem', fontWeight: '800', marginBottom: '5px' }}>IMPERIUM BUILDERS</p>
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.3rem', fontWeight: '800', marginBottom: '5px' }}>NEXUS BUILDERS</p>
         <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>&copy; 2026 • Corporate Identity Portal • Manila, Philippines</p>
       </footer>
     </div>
