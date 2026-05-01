@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+// Import your new logo file
+import logo from '../assets/goldlogo1.png.png'; 
 
 function Navbar() {
   const location = useLocation();
@@ -9,15 +11,22 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">
-        <i className="fa-solid fa-building-columns" style={{ fontSize: '1.8rem' }}></i>
-        <span>
-          <strong style={{ fontSize: '1.4rem' }}>NEXUS BUILDERS</strong><br />
-          <small style={{ color: 'white', fontSize: '0.85rem', letterSpacing: '1px' }}>
+      <Link to="/" className="nav-logo" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '15px' }}>
+        {/* Replaced the icon with your custom gold logo */}
+        <img 
+          src={logo} 
+          alt="Nexus Builders Logo" 
+          style={{ height: '60px', width: 'auto', objectFit: 'contain' }} 
+        />
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.2' }}>
+          <strong style={{ fontSize: '1.4rem', color: 'var(--accent-gold)', letterSpacing: '1px' }}>
+            NEXUS BUILDERS
+          </strong>
+          <small style={{ color: 'white', fontSize: '0.75rem', letterSpacing: '1px', fontWeight: '400' }}>
             Engineering Office Information System
           </small>
-        </span>
-      </div>
+        </div>
+      </Link>
       
       <div className="nav-links" style={{ fontSize: '1.1rem' }}>
         <Link to="/" className={isActive('/')}>Home</Link>

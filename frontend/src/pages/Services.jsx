@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import './HomePage.css'; 
 
-// --- Image Imports (Matched to your latest explorer screenshot) ---
+// --- Brand Logo ---
+import logo from '../assets/goldlogo1.png.png'; 
+
+// --- Image Imports ---
 import imgManagement from '../assets/management.png'; 
 import imgRenovation from '../assets/renovation.png';
-import imgConstruction from '../assets/construction.jpg'; // Note: this one is .jpg
+import imgConstruction from '../assets/construction.jpg'; 
 
 function Services() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -33,19 +36,29 @@ function Services() {
 
   return (
     <div className="home-page-container">
-      <header className="hero" style={{ paddingBottom: '40px' }}>
+      {/* 
+        THE FIX: Added minHeight: '40vh' to override the 80vh from HomePage.css.
+        This shrinks the dark blue hero section to a normal "sub-page" header size. 
+      */}
+      <header className="hero" style={{ minHeight: '40vh', paddingBottom: '40px' }}>
         <Navbar />
-        <div className="hero-content" style={{ marginTop: '30px', padding: '60px 0' }}>
-          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>SERVICES</h1>
-          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)' }}>Expertise & Excellence</p>
+        
+        <div className="hero-content" style={{ marginTop: '20px', padding: '40px 0' }}>
+          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '10px' }}>
+            SERVICES
+          </h1>
+          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)', margin: '0' }}>
+            Expertise & Excellence
+          </p>
         </div>
       </header>
 
-      <main className="container" style={{ maxWidth: '1200px', marginTop: '80px', marginBottom: '100px' }}>
+      {/* --- Main Content --- */}
+      {/* Reset to a normal, clean top margin of 50px */}
+      <main className="container" style={{ maxWidth: '1200px', marginTop: '50px', marginBottom: '80px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '30px' }}>
           {serviceList.map((service, index) => (
             <div key={index} style={serviceCardStyle}>
-              {/* Image Header */}
               <div style={{ height: '300px', overflow: 'hidden', position: 'relative' }}>
                 <img src={service.img} alt={service.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={iconBadgeStyle}>
@@ -53,7 +66,6 @@ function Services() {
                 </div>
               </div>
 
-              {/* Text Content */}
               <div style={{ padding: '30px' }}>
                 <h3 style={{ color: 'var(--primary-blue)', fontSize: '1.6rem', marginBottom: '15px', borderBottom: '2px solid var(--accent-gold)', display: 'inline-block', paddingBottom: '5px' }}>
                   {service.title}
@@ -67,14 +79,20 @@ function Services() {
         </div>
       </main>
 
+      {/* --- Footer Section --- */}
       <footer style={{ textAlign: 'center', padding: '60px 0 40px', borderTop: '2px solid #e2e8f0' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.2rem', fontWeight: '800' }}>NEXUS BUILDERS</p>
+        <img src={logo} alt="Nexus Logo" style={{ height: '45px', marginBottom: '15px', opacity: '0.9' }} />
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '5px' }}>
+          NEXUS BUILDERS
+        </p>
+        <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+          &copy; 2026 • Engineering Office Information System • Manila, Philippines
+        </p>
       </footer>
     </div>
   );
 }
 
-// --- Styles ---
 const serviceCardStyle = {
   background: 'white',
   borderRadius: '20px',

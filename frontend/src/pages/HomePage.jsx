@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
+// Official updated gold logo file
+import logo from '../assets/goldlogo1.png.png'; 
 import './HomePage.css'; 
 
 function HomePage() {
+  useEffect(() => {
+    // Ensures the user starts at the top of the page on load
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="home-page-container">
       {/* --- Header & Navigation --- */}
@@ -10,11 +17,25 @@ function HomePage() {
         <Navbar />
 
         <div className="hero-content" style={{ padding: '80px 0' }}>
-          <i className="fa-solid fa-compass-drafting hero-icon" style={{ fontSize: '3rem' }}></i>
+          {/* Logo with NO backdrop as requested */}
+          <div style={{ display: 'inline-block', marginBottom: '20px' }}>
+            <img 
+              src={logo} 
+              alt="Nexus Builders Gold Logo" 
+              style={{ 
+                height: '140px', 
+                width: 'auto', 
+                display: 'block',
+                /* Subtle gold glow to help the logo pop against the background */
+                filter: 'drop-shadow(0px 0px 12px rgba(198, 162, 84, 0.4))' 
+              }} 
+            />
+          </div>
+          
           <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '15px' }}>
             NEXUS BUILDERS
           </h1>
-          <h2 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1.8rem' }}>
+          <h2 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1.8rem', color: 'white' }}>
             Information System Database
           </h2>
           <p style={{ fontSize: '1.1rem', marginTop: '10px' }}>MANILA, PHILIPPINES</p>
@@ -59,7 +80,7 @@ function HomePage() {
             </div>
           </div>
 
-          {/* Right Column: Corporate History Preview */}
+          {/* Right Column: Corporate Profile */}
           <div className="profile-column">
             <h2 className="section-title" style={{ fontSize: '1.6rem' }}>Corporate Profile</h2>
             <div className="history-card" style={{
@@ -72,8 +93,19 @@ function HomePage() {
               flexDirection: 'column'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '35px' }}>
-                <div style={{ background: '#f8fafc', padding: '25px', borderRadius: '15px', color: 'var(--accent-gold)', border: '1px solid #e2e8f0' }}>
-                  <i className="fa-solid fa-landmark-flag fa-3x"></i>
+                {/* Backdrop removed here by deleting background and border properties */}
+                <div style={{ 
+                  width: '100px',
+                  height: '100px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <img 
+                    src={logo} 
+                    alt="Nexus Gold Logo" 
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }} 
+                  />
                 </div>
                 <div>
                   <h3 style={{ margin: 0, color: 'var(--primary-blue)', fontSize: '1.8rem' }}>Established 2015</h3>
@@ -87,9 +119,19 @@ function HomePage() {
         </section>
       </main>
 
+      {/* --- Footer Section --- */}
       <footer style={{ textAlign: 'center', padding: '80px 0 40px', borderTop: '2px solid #e2e8f0', marginTop: '60px' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>NEXUS BUILDERS</p>
-        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>&copy; 2026 • Engineering Office Information System • Manila, Philippines</p>
+        <img 
+          src={logo} 
+          alt="Nexus Gold Logo" 
+          style={{ height: '50px', marginBottom: '15px' }} 
+        />
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>
+          NEXUS BUILDERS
+        </p>
+        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
+          &copy; 2026 • Engineering Office Information System • Manila, Philippines
+        </p>
       </footer>
     </div>
   );

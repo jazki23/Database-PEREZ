@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import './HomePage.css'; 
 
+// --- Brand Logo ---
+// Updated to the latest gold logo file
+import logo from '../assets/goldlogo1.png.png'; 
+
 function Contact() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -25,15 +29,25 @@ function Contact() {
 
   return (
     <div className="home-page-container">
-      <header className="hero" style={{ paddingBottom: '40px' }}>
+      {/* 
+        THE FIX: Added minHeight: '40vh' to standardize the sub-page header size 
+      */}
+      <header className="hero" style={{ minHeight: '40vh', paddingBottom: '40px' }}>
         <Navbar />
-        <div className="hero-content" style={{ marginTop: '30px', padding: '60px 0' }}>
-          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>CONTACT US</h1>
-          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)' }}>Get in Touch with our Engineering Team</p>
+        {/* Adjusted padding and margins to bring the text closer to the center/bottom */}
+        <div className="hero-content" style={{ marginTop: '20px', padding: '40px 0' }}>
+          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '10px' }}>
+            CONTACT US
+          </h1>
+          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)', margin: '0' }}>
+            Get in Touch with our Engineering Team
+          </p>
         </div>
       </header>
 
-      <main className="container" style={{ maxWidth: '1100px', marginTop: '80px', marginBottom: '100px' }}>
+      {/* --- Main Content --- */}
+      {/* Reduced marginTop from 80px to 50px to bring the content directly under the header */}
+      <main className="container" style={{ maxWidth: '1100px', marginTop: '50px', marginBottom: '100px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
           
           {/* Contact Information Cards */}
@@ -52,7 +66,7 @@ function Contact() {
             ))}
           </div>
 
-          {/* Quick Inquiry Form Mockup */}
+          {/* Quick Inquiry Form */}
           <div style={formContainerStyle}>
             <h3 style={{ color: 'var(--primary-blue)', marginBottom: '25px', fontWeight: '800' }}>Project Inquiry</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -62,13 +76,21 @@ function Contact() {
               <button style={submitButtonStyle}>Send Inquiry</button>
             </div>
           </div>
-
         </div>
       </main>
 
-      <footer style={{ textAlign: 'center', padding: '60px 0 40px', borderTop: '2px solid #e2e8f0' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.2rem', fontWeight: '800' }}>NEXUS BUILDERS</p>
-        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>&copy; 2026 • Engineering Office Information System • Manila, Philippines</p>
+      <footer style={{ textAlign: 'center', padding: '80px 0 40px', borderTop: '2px solid #e2e8f0', marginTop: '60px' }}>
+        <img 
+          src={logo} 
+          alt="Nexus Logo" 
+          style={{ height: '45px', marginBottom: '15px', opacity: '0.9' }} 
+        />
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>
+          NEXUS BUILDERS
+        </p>
+        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
+          &copy; 2026 • Engineering Office Information System • Manila, Philippines
+        </p>
       </footer>
     </div>
   );
@@ -103,36 +125,8 @@ const iconCircleStyle = {
 
 const labelStyle = { color: 'var(--accent-gold)', fontWeight: '800', fontSize: '0.75rem', letterSpacing: '1.5px', marginBottom: '5px' };
 const infoTextStyle = { color: 'var(--primary-blue)', fontSize: '1.1rem', fontWeight: '600', lineHeight: '1.5' };
-
-const formContainerStyle = {
-  background: 'white',
-  padding: '40px',
-  borderRadius: '20px',
-  boxShadow: '0 20px 40px rgba(22, 44, 74, 0.08)',
-  border: '1px solid #f1f5f9'
-};
-
-const inputStyle = {
-  width: '100%',
-  padding: '15px',
-  borderRadius: '8px',
-  border: '1px solid #e2e8f0',
-  fontSize: '1rem',
-  outline: 'none',
-  background: '#fcfdfe'
-};
-
-const submitButtonStyle = {
-  background: 'var(--primary-blue)',
-  color: 'var(--accent-gold)',
-  padding: '15px',
-  borderRadius: '8px',
-  fontWeight: '800',
-  textTransform: 'uppercase',
-  letterSpacing: '2px',
-  border: 'none',
-  cursor: 'pointer',
-  marginTop: '10px'
-};
+const formContainerStyle = { background: 'white', padding: '40px', borderRadius: '20px', boxShadow: '0 20px 40px rgba(22, 44, 74, 0.08)', border: '1px solid #f1f5f9' };
+const inputStyle = { width: '100%', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '1rem', outline: 'none', background: '#fcfdfe' };
+const submitButtonStyle = { background: 'var(--primary-blue)', color: 'var(--accent-gold)', padding: '15px', borderRadius: '8px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '2px', border: 'none', cursor: 'pointer', marginTop: '10px' };
 
 export default Contact;

@@ -1,77 +1,57 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
+// Updated to the latest gold logo file
+import logo from '../assets/goldlogo1.png.png'; 
 import './HomePage.css'; 
 
-function AboutUs() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+function About() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="home-page-container">
-      {/* --- Header & Navigation --- */}
-      <header className="hero" style={{ paddingBottom: '40px' }}>
+      {/* 
+        THE FIX: Added minHeight: '40vh' to standardize the sub-page header size 
+      */}
+      <header className="hero" style={{ minHeight: '40vh', paddingBottom: '40px' }}>
         <Navbar />
-
-        <div className="hero-content" style={{ marginTop: '30px', padding: '60px 0' }}>
-          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+        {/* Adjusted padding and margins to bring the text closer to the center/bottom */}
+        <div className="hero-content" style={{ marginTop: '20px', padding: '40px 0' }}>
+          <h1 style={{ fontWeight: '800', fontSize: '3.5rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)', marginBottom: '10px' }}>
             ABOUT US
           </h1>
-          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)' }}>
-            Corporate Identity & Philosophy
+          <p style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '1.1rem', color: 'var(--accent-gold)', margin: '0' }}>
+            Our Legacy & Vision
           </p>
         </div>
       </header>
 
-      {/* --- Main Content Section --- */}
-      <main className="container" style={{ maxWidth: '1000px', marginTop: '60px' }}>
-        
-        <section id="history" style={{ marginBottom: '60px' }}>
-          <h2 className="section-title" style={{ fontSize: '1.8rem' }}>Company History</h2>
-          <div className="history-card" style={{
-            background: 'white',
-            padding: '50px',
-            borderRadius: '15px',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.05)',
-            borderTop: '5px solid var(--primary-blue)'
-          }}>
-            <p style={{ fontSize: '1.25rem', lineHeight: '2.1', color: '#334155', marginBottom: '25px' }}>
-              Founded in 2015 by <strong>Engr. Percival Archer Riego</strong>, our firm began with a simple but powerful goal: to fix the communication gaps and inefficiencies that often derail construction projects. Having seen firsthand how fragmented information could slow down progress, Engr. Riego built the company on the belief that smart, data-driven planning is just as important as the physical build.
-            </p>
-            <p style={{ fontSize: '1.25rem', lineHeight: '2.1', color: '#334155' }}>
-              We started as a small, tight-knit group of engineers and have since grown into a full-service contractor trusted by both private and public sector clients. Today, we remain focused on that original vision, delivering high-quality, reliable results through a seamless, honest, and highly organized approach to every project we take on.
-            </p>
-          </div>
+      {/* --- Main Content --- */}
+      {/* Reduced marginTop from 80px to 50px to bring the content directly under the header */}
+      <main className="container" style={{ maxWidth: '1000px', marginTop: '50px', marginBottom: '100px' }}>
+        <section style={{ background: 'white', padding: '60px', borderRadius: '30px', boxShadow: '0 20px 50px rgba(0,0,0,0.05)' }}>
+          <h2 style={{ color: 'var(--primary-blue)', borderBottom: '3px solid var(--accent-gold)', display: 'inline-block', marginBottom: '30px' }}>
+            Our Story
+          </h2>
+          <p style={{ fontSize: '1.2rem', lineHeight: '2', color: '#334155', textAlign: 'justify' }}>
+            Founded in 2015 by <strong>Engineer Percival Archer Riego</strong>, Nexus Builders emerged from a vision to integrate rigorous engineering standards with modern data management. What began as a boutique consultancy has grown into a premier engineering firm known for its precision in residential and community developments.
+          </p>
+          <p style={{ fontSize: '1.2rem', lineHeight: '2', color: '#334155', marginTop: '20px', textAlign: 'justify' }}>
+            Our headquarters in Quezon City serves as the hub for our strategic planning and coordination, ensuring that every project—from custom residences to large-scale housing—is delivered with construction integrity.
+          </p>
         </section>
-
-        {/* Mission & Vision Side-by-Side */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px', marginBottom: '80px' }}>
-          <section>
-            <h2 className="section-title" style={{ fontSize: '1.6rem' }}>Mission</h2>
-            <div style={{ background: 'var(--primary-blue)', color: 'white', padding: '45px 35px', borderRadius: '15px', height: '100%', boxShadow: '0 15px 30px rgba(22, 44, 74, 0.2)' }}>
-              <p style={{ fontSize: '1.3rem', lineHeight: '1.8', fontStyle: 'italic' }}>
-                "To eliminate construction inefficiencies through data-driven planning and seamless communication, delivering high-quality, honest results that bridge the gap between complex designs and a perfect build."
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="section-title" style={{ fontSize: '1.6rem' }}>Vision</h2>
-            <div style={{ background: 'white', border: '3px solid var(--primary-blue)', padding: '45px 35px', borderRadius: '15px', height: '100%', boxShadow: '0 15px 30px rgba(0,0,0,0.05)' }}>
-              <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: 'var(--primary-blue)', fontWeight: '600' }}>
-                "To be the industry gold standard for organized construction, transforming the landscape through engineering integrity and smarter, more reliable project execution."
-              </p>
-            </div>
-          </section>
-        </div>
       </main>
 
-      <footer style={{ textAlign: 'center', padding: '60px 0 30px', borderTop: '2px solid #e2e8f0', marginTop: '40px' }}>
-        <p style={{ color: 'var(--primary-blue)', fontSize: '1.3rem', fontWeight: '800', marginBottom: '5px' }}>NEXUS BUILDERS</p>
-        <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>&copy; 2026 • Corporate Identity Portal • Manila, Philippines</p>
+      <footer style={{ textAlign: 'center', padding: '80px 0 40px', borderTop: '2px solid #e2e8f0', marginTop: '60px' }}>
+        <img src={logo} alt="Nexus Logo" style={{ height: '45px', marginBottom: '15px', opacity: '0.9' }} />
+        <p style={{ color: 'var(--primary-blue)', fontSize: '1.5rem', fontWeight: '800', marginBottom: '10px' }}>
+          NEXUS BUILDERS
+        </p>
+        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
+          &copy; 2026 • Engineering Office Information System • Manila, Philippines
+        </p>
       </footer>
     </div>
   );
 }
 
-export default AboutUs;
+export default About;
